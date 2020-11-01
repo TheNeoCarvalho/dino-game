@@ -3,7 +3,7 @@ const background = document.querySelector('.background');
 
 let isJumping = false;
 let isGameOver = false;
-let position = 315;
+let position = 0;
 
 function handleKeyUp(event) {
   if (event.keyCode === 32) {
@@ -18,7 +18,6 @@ function jump() {
 
   let upInterval = setInterval(() => {
     if (position >= 150) {
-      // Descendo
       clearInterval(upInterval);
 
       let downInterval = setInterval(() => {
@@ -31,7 +30,6 @@ function jump() {
         }
       }, 20);
     } else {
-      // Subindo
       position += 20;
       dino.style.bottom = position + 'px';
     }
